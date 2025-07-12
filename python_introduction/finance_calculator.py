@@ -13,5 +13,5 @@ interest = annual_savings * 0.05
 projected_savings = annual_savings + interest
 
 # Display the results
-print(f"\nYour monthly savings are ${monthly_savings:.2f}.")
-print(f"Projected savings after one year, with interest, is: ${projected_savings:.2f}.")
+print(f"\nEnter your monthly income: {monthly_savings:.2f}.")
+print(f"Enter your total monthly expenses: {projected_savings:.2f}.")
