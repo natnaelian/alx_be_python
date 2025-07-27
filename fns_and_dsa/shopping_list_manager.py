@@ -13,8 +13,11 @@ def add_item(shopping_list):
     """Add an item to the shopping list"""
     item = input("\nEnter the item to add: ").strip()
     if item:
-        shopping_list.append(item.lower())  # Store in lowercase for case-insensitive comparison
-        print(f"✅ '{item.capitalize()}' added to your shopping list.")
+        if item.lower() in shopping_list:
+            print(f"⚠️ '{item.title()}' is already in your shopping list.")
+        else:
+            shopping_list.append(item.lower())  # Store in lowercase for case-insensitive comparison
+            print(f"✅ '{item.title()}' added to your shopping list.")
     else:
         print("⚠️ No item entered. Please try again.")
 
@@ -30,9 +33,9 @@ def remove_item(shopping_list):
     item = input("\nEnter the item to remove: ").strip().lower()
     if item in shopping_list:
         shopping_list.remove(item)
-        print(f"✅ '{item.capitalize()}' removed from your shopping list.")
+        print(f"✅ '{item.title()}' removed from your shopping list.")
     else:
-        print(f"⚠️ '{item.capitalize()}' not found in your shopping list.")
+        print(f"⚠️ '{item.title()}' not found in your shopping list.")
 
 def display_list(shopping_list):
     """Display the current shopping list"""
@@ -43,7 +46,7 @@ def display_list(shopping_list):
         print("YOUR SHOPPING LIST:".center(30))
         print("-"*30)
         for index, item in enumerate(shopping_list, start=1):
-            print(f"{index}. {item.capitalize()}")
+            print(f"{index}. {item.title()}")
         print("-"*30)
 
 def main():
