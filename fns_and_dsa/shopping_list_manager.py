@@ -44,19 +44,25 @@ def view_list(shopping_list):
         for i, item in enumerate(shopping_list, 1):
             print(f"{i}. {item}")
 
+def get_menu_choice():
+    """Get and validate menu choice as integer"""
+    while True:
+        try:
+            choice = int(input("\nEnter your choice (1-4): "))
+            if 1 <= choice <= 4:
+                return choice
+            else:
+                print("Please enter a number between 1 and 4.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
 def main():
     """Main program function"""
     shopping_list = []
     
     while True:
         display_menu()
-        choice_input = input("\nEnter your choice (1-4): ").strip()
-        try:
-            choice = int(choice_input)
-        except ValueError:
-            print("\nInvalid choice. Please enter a number between 1 and 4.")
-            input("\nPress Enter to return to menu...")
-            continue
+        choice = get_menu_choice()  # Now using the validated choice function
         
         if choice == 1:
             add_item(shopping_list)
@@ -67,10 +73,9 @@ def main():
         elif choice == 4:
             print("\nGoodbye! Happy shopping!")
             break
-        else:
-            print("\nInvalid choice. Please enter a number between 1 and 4.")
         
         input("\nPress Enter to return to menu...")  # Pause before showing menu again
 
 if __name__ == "__main__":
     main()
+    
