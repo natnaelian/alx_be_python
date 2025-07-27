@@ -1,5 +1,4 @@
 def display_menu():
-    """Display the menu options for the shopping list manager."""
     print("\nShopping List Manager")
     print("1. Add Item")
     print("2. Remove Item")
@@ -7,7 +6,6 @@ def display_menu():
     print("4. Exit")
 
 def main():
-    """Main function to manage the shopping list operations."""
     shopping_list = []
     
     while True:
