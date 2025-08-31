@@ -27,7 +27,6 @@ This project is a simple Django application for managing a library system. It al
 
 ## Usage
 
-Access the application at [http://localhost:8000](http://localhost:8000).
 
 ## License
 
